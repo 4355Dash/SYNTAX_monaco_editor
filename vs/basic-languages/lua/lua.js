@@ -58,7 +58,8 @@ define(["require", "exports"], function (require, exports) {
 
             // raws
             'rawset', 'rawget', 'rawequal',
-
+            // SPECIALAS
+            'saveinstance()',
             // debug
             'getupvalue', 'debug.getupvalue',
             'getconstant', 'debug.getconstant',
