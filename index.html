@@ -179,7 +179,21 @@
 						snippetsPreventQuickSuggestions: true,
 					},
 				});
-
+				   // Define the model and syntax error
+    const model = editor.getModel();
+    
+    // Syntax error at line 2, column 10 (example)
+    const markers = [{
+        severity: monaco.MarkerSeverity.Error,
+        startLineNumber: 2,
+        startColumn: 10,
+        endLineNumber: 2,
+        endColumn: 11,
+        message: "Unexpected token"
+    }];
+    
+    // Set the markers to display the error
+    monaco.editor.setModelMarkers(model, 'owner', markers);
 				editor.getModel().updateOptions({ insertSpaces: true })
 			});
 
