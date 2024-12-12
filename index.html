@@ -179,36 +179,6 @@
 						snippetsPreventQuickSuggestions: true,
 					},
 				});
-				// Assuming you have the Monaco editor set up correctly as per your provided code:
-
-// Function to check for Lua syntax errors
-function checkSyntaxErrors(model) {
-    // Example of how to manually check for Lua errors
-    var markers = [];
-    try {
-        // You can use Lua parsing or syntax check here (this example just checks simple JavaScript syntax for demo purposes)
-        new Function(model.getValue()); // This just tests JavaScript syntax. Replace with actual Lua syntax checker.
-    } catch (e) {
-        // If there's an error, mark the error in the editor
-        markers.push({
-            severity: monaco.MarkerSeverity.Error,
-            startLineNumber: 1,  // You can get this from the error
-            startColumn: 1,      // You can get this from the error
-            endLineNumber: 1,    // You can get this from the error
-            endColumn: 10,       // You can get this from the error
-            message: e.message,  // Display the error message
-        });
-    }
-
-    // Set the markers for the model (error highlighting)
-    monaco.editor.setModelMarkers(model, 'owner', markers);
-}
-
-// Example of how to hook the error checking when content changes
-editor.getModel().onDidChangeContent(function () {
-    checkSyntaxErrors(editor.getModel());
-});
-
 
 				editor.getModel().updateOptions({ insertSpaces: true })
 			});
